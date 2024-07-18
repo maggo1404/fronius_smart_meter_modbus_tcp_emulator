@@ -1,0 +1,12 @@
+[Unit]
+Description=Fronius Stromzaehler
+## Die Anweisung, das Script bei Systemstart auszufuehren und der Pfad, wo sich das Script selbst befindet. Kann je nach Speicherort natuerlich variieren.
+
+[Service]
+ExecStart=/usr/bin/python3 /root/froniuscounter.py
+Restart=on-failure
+RestartSec=1s
+## Hier werden notwendige Informationen beschrieben, um den Service bei Systemstart direkt auszufuehren.
+
+[Install]
+WantedBy=multi-user.target
