@@ -7,5 +7,9 @@ Just enter MQTT server data and send CONSUMPTION, TOTAL_IMPORT in Wh and TOTAL_E
 
 Was tested with fronius gen24 as primary counter
 
-preparing:
+Install
+```
+apt install python3 python3-pip git
 pip3 install "paho-mqtt<2.0.0" pymodbus
+
+```
