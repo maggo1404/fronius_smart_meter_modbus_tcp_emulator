@@ -69,9 +69,9 @@ class RepeatedTimer(object):
 # Configuration
 ###############################################################
 mqttconf = {
-            'username':"user",
-            'password':"passwort",
-            'address': "192.168.10.10",
+            'username':"gas",
+            'password':"gaspasswort",
+            'address': "192.168.10.114",
             'port': 1883
 }
 MQTT_TOPIC_CONSUMPTION  = "deye/ac/active_power" #Import Watts
@@ -83,7 +83,7 @@ MQTT_TOPIC_L1_CURRENT = "deye/ac/l1/current"
 MQTT_TOPIC_L1_POWER = "deye/ac/l1/power"
 MQTT_TOPIC_STATUS = "deye/logger_status" #Timestamp for Check MK 
 
-corrfactor = 1000 
+corrfactor = 1 
 i_corrfactor = int(corrfactor)
 
 modbus_port = 502
@@ -296,6 +296,7 @@ def updating_writer(a_context):
         ep_int1 = 0
         ep_int2 = 0
     else:
+        electrical_power_float = electrical_power_float * float(-1)
         electrical_power_hex = hex(struct.unpack('<I', struct.pack('<f', electrical_power_float))[0])
         electrical_power_hex_part1 = str(electrical_power_hex)[2:6] #extract first register part (hex)
         electrical_power_hex_part2 = str(electrical_power_hex)[6:10] #extract seconds register part (hex)
