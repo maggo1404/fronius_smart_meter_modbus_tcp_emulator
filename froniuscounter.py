@@ -69,9 +69,9 @@ class RepeatedTimer(object):
 # Configuration
 ###############################################################
 mqttconf = {
-            'username':"gas",
-            'password':"gaspasswort",
-            'address': "192.168.10.114",
+            'username':"user",
+            'password':"passwort",
+            'address': "192.168.10.10",
             'port': 1883
 }
 MQTT_TOPIC_CONSUMPTION  = "deye/ac/active_power" #Import Watts
