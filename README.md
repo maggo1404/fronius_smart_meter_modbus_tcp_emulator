@@ -10,7 +10,7 @@ Was tested with fronius gen24 as primary counter and secandary counter
 Install 
 ```
 apt install python3 python3-pip git
-pip3 install "paho-mqtt<2.0.0" pymodbus
+pip3 install "paho-mqtt<2.0.0" "pymodbus<3.7.0"
 git clone https://github.com/maggo1404/fronius_smart_meter_modbus_tcp_emulator.git
 cp zaehler.service /etc/systemd/system
 systemctl daemon-reload
