@@ -83,6 +83,8 @@ MQTT_TOPIC_L1_CURRENT = "deye/ac/l1/current"
 MQTT_TOPIC_L1_POWER = "deye/ac/l1/power"
 MQTT_TOPIC_STATUS = "deye/logger_status" #Timestamp for Check MK 
 
+offset_einspeisung = 0 #offset um frueher produzierten strom zu etnfernen
+offset_netzbezug = 0
 corrfactor = 1 
 i_corrfactor = int(corrfactor)
 
@@ -403,7 +405,7 @@ def run_updating_server():
                 83,109,97,114,116,32,77,101,116,101,114,32,54,51,65,0, #Device Model "Smart Meter
                 0,0,0,0,0,0,0,0,                                       #Options N/A
                 0,0,0,0,0,0,0,0,                                       #Software Version  N/A
-                48,48,48,48,48,48,48,49,0,0,0,0,0,0,0,0,               #Serial Number: 00000
+                48,48,48,48,48,51,50,49,0,0,0,0,0,0,0,0,               #Serial Number: 00000
                 241],                                                  #Modbus TCP Address: 
         40070: [213],
         40071: [124],
